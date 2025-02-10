@@ -19,6 +19,11 @@ namespace csharp_G_H
         public NumeroErratoException() : base("Sintassi errata. Inserisci un numero intero positivo.") { }
     }
 
+    public class NumeroOutErratoException : Eccezzioni
+    {
+        public NumeroOutErratoException() : base("Indice non presente nell'array") { }
+    }
+
     public class NumeroPilotiException : Eccezzioni
     {
         public NumeroPilotiException() : base("Devi inserire almeno 2 piloti.") { }

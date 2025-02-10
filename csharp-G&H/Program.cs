@@ -3,6 +3,17 @@
 
        
         4) Cosa sono gli operatori logico booleani?
+
+            Gli operatori logici booleani eseguono operazioni logiche con gli operandi bool.
+            Gli operatori includono:
+                1) la negazione logica unaria (!) => negazione logica dell'operando ovvero trasforma true a false e viceversa, 
+                2) la logica binaria AND (&) => calcola l'AND logico dei relativi operandi cioè impone il verificarsi di tutti i casi A & B,
+                3) OR logico (|) => calcola l'OR logico dei relativi operandi cioè verifica che almeno uno dei due casi sia vero A | B, 
+                4) OR esclusivo (^) => calcola l'OR esclusivo logico dei relativi operandi cioè verifica che uno dei due casi sia vero ma non entrambi A ^ B,
+                5) e la logica binaria condizionale AND (&&) e OR (||) => and e or logico condizionale, cioè se il primo operando è sufficiente a determinare il risultato, il secondo non viene valutato.
+
+
+
         5) Cos’è il tipo di ritorno di un metodo e cosa implica?
         6) Che differenza c’è tra le strutture di controllo selettive e quelle iterative?       
         13) Quali sono le conseguenze dell’ereditarietà?
@@ -14,7 +25,7 @@
             
           
             Un oggetto è un'entità concreta che rappresenta un'istanza di una classe.
-            Una classe è un modello o schema che definisce le proprietà e i comportamenti dell'oggetti o degli oggetti.
+            Una classe è un modello o schema che definisce le proprietà e i comportamenti dell'oggetto o degli oggetti.
             Un'istanza è la creazione di un oggetto a partire da una classe.
 
         2) Cos’è il processo di astrazione?
@@ -299,9 +310,14 @@ namespace csharp_G_H
                 int value;
 
                 // Controllo dell'input
-                if (!int.TryParse(Console.ReadLine(), out value) || value < 1 || value > n)
+                if (!int.TryParse(Console.ReadLine(), out value) || value < 1)
                 {
                     throw new NumeroErratoException();
+                }
+
+                if ( value > n)
+                {
+                    throw new NumeroOutErratoException();
                 }
 
                 // Decremento value per adattarlo all'indice dell'array scelto dall'utente
@@ -344,7 +360,7 @@ namespace csharp_G_H
                     numeri[value] = numeri[indMax];
                     numeri[indMax] = temp;
 
-                    Console.WriteLine($"\nScambiato l'elemento in posizione {indMax} con l'elemento in posizione {value+1}.\n");
+                    Console.WriteLine($"\nScambiato l'elemento in posizione {indMax} con l'elemento in posizione {indMax + 1}.\n");
 
                     //stampo l'array su una sola riga
                     Console.WriteLine(string.Join(" ", numeri));
