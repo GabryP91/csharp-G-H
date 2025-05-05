@@ -42,7 +42,7 @@
         4) Definisci gli array e fai un esempio.
         
             Un array è una struttura dati che contiene una collezione di elementi dello stesso tipo, accessibili tramite un indice.
-            In C#, gli array sono definiti specificando il tipo degli elementi e la dimensione dell'array, devono sempre avere una dimensione definita.
+            In C#, gli array sono definiti specificando il tipo degli elementi e la dimensione dell'array deve sempre essere definita.
            
             Esempio:
             int[] numeri = new int[5] { 1, 2, 3, 4, 5 };
